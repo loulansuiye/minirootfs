@@ -1,0 +1,3 @@
+[submodule "submodule/busybox"]
+	path = submodule/busybox
+	url = https://github.com/mirror/busybox.git
