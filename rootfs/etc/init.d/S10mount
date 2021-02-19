@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# mount file system
+#
+
+case "$1" in
+  start)
+	echo -n "mount filesystem : "
+	mount -a
+	echo "OK"
+	;;
+  stop)
+	echo -n "umount filesystem : "
+	umount -a -r
+	echo "OK"
+	;;
+  restart|reload)
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?
