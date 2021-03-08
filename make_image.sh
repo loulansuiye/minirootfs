@@ -13,7 +13,7 @@ fi
 FSTYPE=$1
 IMAGE=rootfs.$FSTYPE
 
-rm -rf $IMAGE
+rm -rf rootfs.*
 
 mkdir -p tmpfs
 dd if=/dev/zero of=$IMAGE bs=1M count=32
