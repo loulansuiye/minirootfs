@@ -32,7 +32,7 @@ if [ $ARCH == "x86_64" ]; then
 	else
 		useage
 		echo "Now support architecture : x86_64/arm64"
-		echo "Now support version: 2.6.34/3.16/5.4/master"
+		echo "Now support version: 2.6.34/3.16/4.4/5.4/master"
 		exit
 	fi
 elif [ $ARCH == "arm64" ]; then
