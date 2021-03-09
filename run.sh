@@ -16,7 +16,8 @@ fi
 
 if [ $ARCH == "x86_64" ]; then
 	if [ $TARGET == "2.6.34" ]; then
-		echo "x86_64 2.6.34"
+		ln -sfn output_1_22 submodule/busybox/output
+		./make_image.sh ext3
 	elif [ $TARGET == "3.16" ]; then
 		echo "x86_64 3.16"
 	elif [ $TARGET == "4.4" ]; then
