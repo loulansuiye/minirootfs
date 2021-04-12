@@ -16,19 +16,19 @@ fi
 
 if [ $ARCH == "x86_64" ]; then
 	if [ $TARGET == "2.6.34" ]; then
-		ln -sfn output_1_22 submodule/busybox/output
-		./make_image.sh ext3
+		BUSYBOX=1_22
+		FSTYPE=ext3
 	elif [ $TARGET == "3.16" ]; then
 		echo "x86_64 3.16"
 	elif [ $TARGET == "4.4" ]; then
-		ln -sfn output_1_24 submodule/busybox/output
-		./make_image.sh ext4
+		BUSYBOX=1_24
+		FSTYPE=ext4
 	elif [ $TARGET == "5.4" ]; then
-		ln -sfn output_1_31 submodule/busybox/output
-		./make_image.sh ext4
+		BUSYBOX=1_31
+		FSTYPE=ext4
 	elif [ $TARGET == "slub" ]; then
-		ln -sfn output_1_14 submodule/busybox/output
-		./make_image.sh ext2
+		BUSYBOX=1_14
+		FSTYPE=ext2
 	elif [ $TARGET == "master" ]; then
 		echo "x86_64 master"
 	else
@@ -56,5 +56,6 @@ elif [ $ARCH == "arm64" ]; then
 	fi
 fi
 
-
+ln -sfn output_$BUSYBOX submodule/busybox/output
+./make_image.sh $FSTYPE
 
